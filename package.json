@@ -1,0 +1,72 @@
+{
+    "name": "ipfs-foundation-electron",
+    "productName": "ipfs-foundation-electron",
+    "version": "1.0.0",
+    "description": "My Electron application description",
+    "main": "src/index.js",
+    "scripts": {
+        "start": "electron-forge start",
+        "package": "electron-forge package",
+        "make": "electron-forge make",
+        "publish": "electron-forge publish",
+        "lint": "echo \"No linting configured\""
+    },
+    "keywords": [],
+    "author": "ALownes",
+    "license": "MIT",
+    "config": {
+        "forge": {
+            "make_targets": {
+                "win32": [
+                    "squirrel"
+                ],
+                "darwin": [
+                    "zip"
+                ],
+                "linux": [
+                    "deb",
+                    "rpm"
+                ]
+            },
+            "electronPackagerConfig": {
+                "packageManager": "npm",
+                "asar.unpackDir": "node_modules/go-ipfs-dep"
+            },
+            "electronWinstallerConfig": {
+                "name": "ipfs_foundation_electron"
+            },
+            "electronInstallerDebian": {},
+            "electronInstallerRedhat": {},
+            "github_repository": {
+                "owner": "",
+                "name": ""
+            },
+            "windowsStoreConfig": {
+                "packageName": "",
+                "name": "ipfsfoundationelectron"
+            }
+        }
+    },
+    "dependencies": {
+        "electron-compile": "^6.4.2",
+        "electron-devtools-installer": "^2.1.0",
+        "ipfs": "^0.26.0",
+        "is-ipfs": "^0.3.2",
+        "react": "^15.4.1",
+        "react-dom": "^15.4.1",
+        "react-hot-loader": "^3.0.0-beta.6",
+        "react-redux": "^5.0.6",
+        "react-router-dom": "^4.2.2",
+        "redux": "^3.7.2",
+        "redux-thunk": "^2.2.0",
+        "set-db": "^0.1.9"
+    },
+    "devDependencies": {
+        "babel-plugin-transform-async-to-generator": "^6.24.1",
+        "babel-plugin-transform-es2015-classes": "^6.24.1",
+        "babel-preset-env": "^1.6.0",
+        "babel-preset-react": "^6.24.1",
+        "electron-forge": "^4.1.0",
+        "electron-prebuilt-compile": "1.7.8"
+    }
+}
